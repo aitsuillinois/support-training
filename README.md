@@ -1,4 +1,4 @@
-# Training and Support
+# Support and Training
 
 ## GitHub Provided Labs
 
@@ -13,6 +13,10 @@ Using Markdown in GitHub - https://lab.github.com/githubtraining/communicating-u
 Learning Git and GitHub (1h 21m) - https://www.linkedin.com/learning/learning-git-and-github/
 
 Git Essential Training: The Basics (2h 55m) - https://www.linkedin.com/learning/git-essential-training-the-basics/
+
+##
+
+Creating SSH Keys: https://github.com/aitsuillinois/aits-github-support/wiki/Creating-SSH-Keys
 
 ## Other helpful links:
 

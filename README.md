@@ -1,4 +1,6 @@
-# GitHub Training and Support
+# Training and Support
+
+## GitHub Provided Labs
 
 GitHub Learning Lab - https://lab.github.com/
 
@@ -6,7 +8,13 @@ Introduction to GitHub - https://lab.github.com/githubtraining/introduction-to-g
 
 Using Markdown in GitHub - https://lab.github.com/githubtraining/communicating-using-markdown 
 
-# Other helpful links:
+## LinkedIn Learning Videos
+
+Learning Git and GitHub (1h 21m) - https://www.linkedin.com/learning/learning-git-and-github/
+
+Git Essential Training: The Basics (2h 55m) - https://www.linkedin.com/learning/git-essential-training-the-basics/
+
+## Other helpful links:
 
 https://git-scm.com/
 

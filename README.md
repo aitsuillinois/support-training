@@ -14,7 +14,7 @@ Learning Git and GitHub (1h 21m) - https://www.linkedin.com/learning/learning-gi
 
 Git Essential Training: The Basics (2h 55m) - https://www.linkedin.com/learning/git-essential-training-the-basics/
 
-##
+## SSH Keys and Personal Access Tokens
 
 Creating SSH Keys: https://github.com/aitsuillinois/aits-github-support/wiki/Creating-SSH-Keys
 

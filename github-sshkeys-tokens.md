@@ -1,32 +1,5 @@
 # GitHub - SSH Keys and Personal Tokens
 
-Table of Contents
-
-[SSH Keys](#_Toc32866610)
-
-[Check for existing SSH keys](#_Toc32866611)
-
-[Generate a new SSH key and add it to the ssh-agent](#_Toc32866612)
-
-[Generating a new SSH key](#_Toc32866613)
-
-[Adding your SSH key to the ssh-agent](#_Toc32866614)
-
-[Adding a new SSH key to your GitHub account](#_Toc32866615)
-
-[Changing a remote's URL](#_Toc32866616)
-
-[Switching remote URLs from SSH to HTTPS](#_Toc32866617)
-
-[Switching remote URLs from HTTPS to SSH](#_Toc32866618)
-
-[Troubleshooting](#_Toc32866619)
-
-[Personal Access Tokens](#_Toc32866620)
-
-[Creating a Token](#_Toc32866621)
-
-[Using a Token on the Command Line](#_Toc32866622)
 
 SSH Keys
 ========
@@ -56,20 +29,20 @@ Before you generate an SSH key, you can check to see if you have any existing SS
 
 *id_dsa.pub*
 
-If you don't have an existing public and private key pair, or don't wish to use any that are available to connect to GitHub Enterprise, then [generate a new SSH key](#_Generate_a_new).
+If you don't have an existing public and private key pair, or don't wish to use any that are available to connect to GitHub Enterprise, then **generate a new SSH key**.
 
-If you see an existing public and private key pair listed (for example *id_rsa.pub* and *id_rsa*) that you would like to use to connect to GitHub Enterprise, you can [add your SSH key to the ssh-agent](#_Generate_a_new).
+If you see an existing public and private key pair listed (for example *id_rsa.pub* and *id_rsa*) that you would like to use to connect to GitHub Enterprise, you can **add your SSH key to the ssh-agent**.
 
-**Tip:** If you receive an error that *~/.ssh* doesn't exist, don't worry! We'll create it when we [generate a new SSH key](#_Generate_a_new).
+**Tip:** If you receive an error that *~/.ssh* doesn't exist, don't worry! We'll create it when we **generate a new SSH key**.
 
 Generate a new SSH key and add it to the ssh-agent
 --------------------------------------------------
 
 After you've checked for existing SSH keys, you can generate a new SSH key to use for authentication, then add it to the ssh-agent.
 
-If you don't already have an SSH key, you must [generate a new SSH key](#_Generating_a_new). If you're unsure whether you already have an SSH key, [check for existing keys](#_Check_for_existing).
+If you don't already have an SSH key, you must **generate a new SSH key**. If you're unsure whether you already have an SSH key, **check for existing keys**.
 
-If you don't want to reenter your passphrase every time you use your SSH key, you can [add your key to the SSH agent](#_Adding_your_SSH), which manages your SSH keys and remembers your passphrase.
+If you don't want to reenter your passphrase every time you use your SSH key, you can **add your key to the SSH agent**, which manages your SSH keys and remembers your passphrase.
 
 ### Generating a new SSH key
 
@@ -81,27 +54,27 @@ If you don't want to reenter your passphrase every time you use your SSH key, yo
 
 This creates a new ssh key, using the provided email as a label.
 
-Ø `Generating public/private rsa key pair.`
+-> `Generating public/private rsa key pair.`
 
 3. When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
 
-Ø `Enter a file in which to save the key (/Users/`*you*`/.ssh/id_rsa): `*[Press enter]*
+-> `Enter a file in which to save the key (/Users/`*you*`/.ssh/id_rsa): `*[Press enter]*
 
 4. At the prompt, type a secure passphrase.
 
-`Ø ``Enter passphrase (empty for no passphrase): `*[Type a passphrase]*
+`-> ``Enter passphrase (empty for no passphrase): `*[Type a passphrase]*
 
-*Ø *`Enter same passphrase again: `*[Type passphrase again]*
+*-> *`Enter same passphrase again: `*[Type passphrase again]*
 
 ### Adding your SSH key to the ssh-agent
 
-Before adding a new SSH key to the ssh-agent to manage your keys, you should have [checked for existing SSH keys](#_Check_for_existing) and [generated a new SSH key](#_Generating_a_new). 
+Before adding a new SSH key to the ssh-agent to manage your keys, you should have **checked for existing SSH keys** and **generated a new SSH key** 
 
 1. Start the ssh-agent in the background.
 
 `$ eval "$(ssh-agent -s)"`
 
-Ø` Agent pid 59566`
+->` Agent pid 59566`
 
 2. If you are using macOS Sierra 10.12.2 or later:  you will need to modify your `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
@@ -117,18 +90,18 @@ Before adding a new SSH key to the ssh-agent to manage your keys, you should hav
 
 `$ ssh-add -K ~/.ssh/id_rsa`
 
-4. [Add the SSH key to your GitHub account](#_Adding_a_new).
+4. **Add the SSH key to your GitHub account**
 
 Adding a new SSH key to your GitHub account
 -------------------------------------------
 
 Before adding a new SSH key to your GitHub Enterprise account, you should have:
 
-[Checked for existing SSH keys](#_Check_for_existing)
+**Checked for existing SSH keys**
 
-[Generated a new SSH key and added it to the ssh-agent](#_Generate_a_new)
+**Generated a new SSH key and added it to the ssh-agent**
 
-After adding a new SSH key to your GitHub Enterprise account, you can reconfigure any local repositories to use SSH. For more information, see "[Switching remote URLs from HTTPS to SSH](#_Switch_remote_URLs)."
+After adding a new SSH key to your GitHub Enterprise account, you can reconfigure any local repositories to use SSH. For more information, see **Switching remote URLs from HTTPS to SSH**
 
 1. Copy the SSH key to your clipboard.
 
@@ -144,17 +117,17 @@ b. Windows:
 
 $ clip < ~/.ssh/id_rsa.pub
 
-# Copies the contents of the id_rsa.pub file to your clipboard
+#Copies the contents of the id_rsa.pub file to your clipboard
 
 c. Linux:
 
 $ sudo apt-get install xclip
 
-# Downloads and installs xclip. If you don't have `apt-get`, you might need to use another installer (like `yum`)
+#Downloads and installs xclip. If you don't have `apt-get`, you might need to use another installer (like `yum`)
 
 $ xclip -sel clip < ~/.ssh/id_rsa.pub
 
-# Copies the contents of the id_rsa.pub file to your clipboard
+#Copies the contents of the id_rsa.pub file to your clipboard
 
 **Tip:** If `pbcopy/clip/xclip` isn't working, you can locate the hidden `.ssh` folder, open the file in your favorite text editor, and copy it to your clipboard.
 
@@ -201,9 +174,9 @@ o If you're updating to use SSH, your URL might look like:
 
 `$ git remote -v`
 
-`Ø ``origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (fetch)`
+`-> ``origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (fetch)`
 
-Ø `origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (push)`
+-> `origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (push)`
 
 4. Change your remote's URL from SSH to HTTPS with the `git remote set-url` command.
 
@@ -215,17 +188,17 @@ o If you're updating to use SSH, your URL might look like:
 
 `# Verify new remote URL`
 
-`Ø ``origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (fetch)`
+`-> ``origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (fetch)`
 
-Ø `origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (push)`
+-> `origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (push)`
 
 The next time you `git fetch`, `git pull`, or `git push` to the remote repository, you'll be asked for your GitHub username and password.
 
-- If you have [two-factor authentication](https://help.github.com/en/enterprise/2.18/user/articles/securing-your-account-with-two-factor-authentication-2fa) enabled, you must [create a personal access token](https://help.github.com/en/enterprise/2.18/user/articles/creating-a-personal-access-token-for-the-command-line) to use instead of your GitHub password.
+- If you have [two-factor authentication](https://help.github.com/en/enterprise/2.18/user/articles/securing-your-account-with-two-factor-authentication-2fa) enabled, you must **create a personal access token** to use instead of your GitHub password.
 
 - You can [use a credential helper](https://help.github.com/en/enterprise/2.18/user/articles/caching-your-github-password-in-git) so Git will remember your GitHub username and password every time it talks to GitHub.
 
-### [Switching remote URLs from HTTPS to SSH](https://help.github.com/en/enterprise/2.18/user/github/using-git/changing-a-remotes-url#switching-remote-urls-from-https-to-ssh)
+### Switching remote URLs from HTTPS to SSH
 
 1. Open Terminal (Mac/Linux).  Open Git Bash (Windows).
 
@@ -235,13 +208,13 @@ The next time you `git fetch`, `git pull`, or `git push` to the remote repos
 
 `$ git remote -v`
 
-`Ø ``origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (fetch)`
+`-> ``origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (fetch)`
 
-Ø `origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (push)`
+-> `origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (push)`
 
 4. Change your remote's URL from HTTPS to SSH with the `git remote set-url` command.
 
-Ø `$ git remote set-url origin git@`*hostname*`:`*USERNAME*`/`*REPOSITORY*`.git`
+-> `$ git remote set-url origin git@`*hostname*`:`*USERNAME*`/`*REPOSITORY*`.git`
 
 5. Verify that the remote URL has changed.
 
@@ -249,21 +222,21 @@ The next time you `git fetch`, `git pull`, or `git push` to the remote repos
 
 `# Verify new remote URL`
 
-`Ø ``origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (fetch)`
+`-> ``origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (fetch)`
 
-Ø `origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (push)`
+-> `origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (push)`
 
-### [Troubleshooting](https://help.github.com/en/enterprise/2.18/user/github/using-git/changing-a-remotes-url#troubleshooting)
+### Troubleshooting
 
 You may encounter these errors when trying to change a remote.
 
-[**No such remote '[name]'**](https://help.github.com/en/enterprise/2.18/user/github/using-git/changing-a-remotes-url#no-such-remote-name)
+**No such remote '[name]'**
 
 This error means that the remote you tried to change doesn't exist:
 
 `$ git remote set-url sofake `<https://hostname/octocat/Spoon-Knife>
 
-Ø `fatal: No such remote 'sofake'`
+-> `fatal: No such remote 'sofake'`
 
 Check that you've correctly typed the remote name.
 
@@ -308,4 +281,4 @@ For example, on the command line you would enter the following:
 
 `Password: `*your_token*
 
-Personal access tokens can only be used for HTTPS Git operations. If your repository uses an SSH remote URL, you will need to [switch the remote from SSH to HTTPS](#_Switching_remote_URLs).
+Personal access tokens can only be used for HTTPS Git operations. If your repository uses an SSH remote URL, you will need to **switch the remote from SSH to HTTPS**.

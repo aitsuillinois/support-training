@@ -241,7 +241,7 @@ You may encounter these errors when trying to change a remote.
 
 This error means that the remote you tried to change doesn't exist:
 
-   `$ git remote set-url sofake `<https://hostname/octocat/Spoon-Knife>
+   `$ git remote set-url sofake <https://hostname/octocat/Spoon-Knife>`
 
    `-> fatal: No such remote 'sofake'`
 

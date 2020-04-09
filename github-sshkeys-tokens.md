@@ -47,7 +47,7 @@ If you don't want to reenter your passphrase every time you use your SSH key, yo
 
 2. Paste the text below, substituting in your GitHub Enterprise email address.
 
-   `$ ssh-keygen -t rsa -b 4096 -C "*your_email@example.com*"`
+   `$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
 
    This creates a new ssh key, using the provided email as a label.
 
@@ -153,11 +153,11 @@ The `git remote set-url` command takes two arguments:
 
 If you're updating to use HTTPS, your URL might look like:
 
-   `https://[hostname]/*USERNAME*/*REPOSITORY*.git`
+   https://*[hostname]/USERNAME/REPOSITORY*.git
 
 If you're updating to use SSH, your URL might look like:
 
-   `git@*hostname*:*USERNAME*/*REPOSITORY*.git`
+   git@*hostname:USERNAME/REPOSITORY*.git
 
 #### Switching remote URLs from SSH to HTTPS
 
@@ -169,13 +169,13 @@ If you're updating to use SSH, your URL might look like:
 
    `$ git remote -v`
 
-   `-> origin  git@*hostname*:*USERNAME/REPOSITORY*.git (fetch)`
+   `-> origin  git@hostname:USERNAME/REPOSITORY.git (fetch)`
 
-   `-> origin  git@*hostname*:*USERNAME/REPOSITORY*.git (push)`
+   `-> origin  git@hostname:USERNAME/REPOSITORY.git (push)`
 
 4. Change your remote's URL from SSH to HTTPS with the `git remote set-url` command.
 
-   `$ git remote set-url origin https://*hostname*/*USERNAME*/*REPOSITORY*.git`
+   `$ git remote set-url origin https://hostname/USERNAME/REPOSITORY.git`
 
 5. Verify that the remote URL has changed.
 
@@ -183,9 +183,9 @@ If you're updating to use SSH, your URL might look like:
 
    #Verify new remote URL
 
-   `-> origin  https://*hostname*/*USERNAME/REPOSITORY*.git (fetch)`
+   `-> origin  https://hostname/USERNAME/REPOSITORY.git (fetch)`
 
-   `-> origin  https://*hostname*/*USERNAME/REPOSITORY*.git (push)`
+   `-> origin  https://hostname/USERNAME/REPOSITORY.git (push)`
 
 The next time you `git fetch`, `git pull`, or `git push` to the remote repository, you'll be asked for your GitHub username and password.
 
@@ -203,13 +203,13 @@ The next time you `git fetch`, `git pull`, or `git push` to the remote repos
 
    `$ git remote -v`
 
-   `-> origin  https://*hostname*/*USERNAME/REPOSITORY*.git (fetch)`
+   `-> origin  https://hostname/USERNAME/REPOSITORY.git (fetch)`
 
-   `-> origin  https://*hostname*/*USERNAME/REPOSITORY*.git (push)`
+   `-> origin  https://hostname/USERNAME/REPOSITORY.git (push)`
 
 4. Change your remote's URL from HTTPS to SSH with the `git remote set-url` command.
 
-   `-> $ git remote set-url origin git@*hostname*:*USERNAME*/*REPOSITORY*.git`
+   `-> $ git remote set-url origin git@hostname:USERNAME/REPOSITORY.git`
 
 5. Verify that the remote URL has changed.
 
@@ -217,9 +217,9 @@ The next time you `git fetch`, `git pull`, or `git push` to the remote repos
 
    `# Verify new remote URL`
 
-   `-> origin  git@*hostname*:*USERNAME/REPOSITORY*.git (fetch)`
+   `-> origin  git@hostname:USERNAME/REPOSITORY.git (fetch)`
 
-   `-> origin  git@*hostname*:*USERNAME/REPOSITORY*.git (push)`
+   `-> origin  git@hostname:USERNAME/REPOSITORY.git (push)`
 
 #### Troubleshooting
 
@@ -267,7 +267,7 @@ Once you have a token, you can enter it instead of your password when performing
 
 For example, on the command line you would enter the following:
 
-   `$ git clone https://*hostname*/*username*/*repo*.git`
+   `$ git clone https://hostname/username/repo.git`
 
    `Username: your_username`
 

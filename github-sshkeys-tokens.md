@@ -129,17 +129,29 @@ After adding a new SSH key to your GitHub Enterprise account, you can reconfigur
 
 2. In the upper-right corner of any page, click your profile photo, then click **Settings**.
 
+![settings](https://github.com/clhawk/images/blob/master/sshkeys_image001.png)
+
 3. In the user settings sidebar, click **SSH and GPG keys**.
 
+![sshgpgmenu](https://github.com/clhawk/images/blob/master/sshkeys_image002.png)
+
 4. Click **New SSH key** or **Add SSH key**.
+
+![sshmenu1](https://github.com/clhawk/images/blob/master/sshkeys_image003.png)
 
 5. In the "Title" field, add a descriptive label for the new key. For example, if you're using a personal Mac, you might call this key "Personal MacBook Air".
 
 6. Paste your key into the "Key" field.
 
+![sshmenu2](https://github.com/clhawk/images/blob/master/sshkeys_image004.png)
+
 7. Click **Add SSH key**.
 
+![sshmenu3](https://github.com/clhawk/images/blob/master/sshkeys_image005.png)
+
 8. If prompted, confirm your GitHub Enterprise password.
+
+![pswd](https://github.com/clhawk/images/blob/master/sshkeys_image006.png)
 
 ### Changing a remote's URL
 
@@ -245,19 +257,35 @@ A personal access token is required to authenticate to GitHub Enterprise when [
 
 In the upper-right corner of any page, click your profile photo, then click **Settings**.
 
+![settings](https://github.com/clhawk/images/blob/master/sshkeys_image001.png)
+
 In the left sidebar, click **Developer settings**.
+
+![devmenu](https://github.com/clhawk/images/blob/master/sshkeys_image007.png)
 
 In the left sidebar, click **Personal access tokens**.
 
+![tokenmenu](https://github.com/clhawk/images/blob/master/sshkeys_image008.png)
+
 Click **Generate new token**.
+
+![token1](https://github.com/clhawk/images/blob/master/sshkeys_image009.png)
 
 Give your token a descriptive name.
 
+![token2](https://github.com/clhawk/images/blob/master/sshkeys_image010.png)
+
 Select the scopes, or permissions, you'd like to grant this token. To use your token to access repositories from the command line, select **repo**.
+
+![perm](https://github.com/clhawk/images/blob/master/sshkeys_image011.gif)
 
 Click **Generate token**.
 
+![token3](https://github.com/clhawk/images/blob/master/sshkeys_image012.png)
+
 Click  to copy the token to your clipboard. For security reasons, after you navigate off the page, you will not be able to see the token again.
+
+![token4](https://github.com/clhawk/images/blob/master/sshkeys_image013.png)
 
 **Warning:** Treat your tokens like passwords and keep them secret. When working with the API, use tokens as environment variables instead of hardcoding them into your programs.
 

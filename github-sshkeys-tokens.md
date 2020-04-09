@@ -15,19 +15,19 @@ Before you generate an SSH key, you can check to see if you have any existing SS
 
 2. Enter `ls -al ~/.ssh` to see if existing SSH keys are present:
 
-`$ ls -al ~/.ssh`
+   `$ ls -al ~/.ssh`
 
-`# Lists the files in your .ssh directory, if they exist`
+   `# Lists the files in your .ssh directory, if they exist`
 
 3. Check the directory listing to see if you already have a public SSH key. By default, the filenames of the public keys are one of the following:
 
-*id_rsa.pub*
+   *id_rsa.pub*
 
-*id_ecdsa.pub*
+   *id_ecdsa.pub*
 
-*id_ed25519.pub*
+   *id_ed25519.pub*
 
-*id_dsa.pub*
+   *id_dsa.pub*
 
 If you don't have an existing public and private key pair, or don't wish to use any that are available to connect to GitHub Enterprise, then **generate a new SSH key**.
 
@@ -50,21 +50,21 @@ If you don't want to reenter your passphrase every time you use your SSH key, yo
 
 2. Paste the text below, substituting in your GitHub Enterprise email address.
 
-`$ ssh-keygen -t rsa -b 4096 -C "`*your_email@example.com*`"`
+   `$ ssh-keygen -t rsa -b 4096 -C "`*your_email@example.com*`"`
 
 This creates a new ssh key, using the provided email as a label.
 
--> `Generating public/private rsa key pair.`
+   `-> Generating public/private rsa key pair.`
 
 3. When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
 
--> `Enter a file in which to save the key (/Users/`*you*`/.ssh/id_rsa): `*[Press enter]*
+   `-> Enter a file in which to save the key (/Users/`*you*`/.ssh/id_rsa): `*[Press enter]*
 
 4. At the prompt, type a secure passphrase.
 
-`-> ``Enter passphrase (empty for no passphrase): `*[Type a passphrase]*
+   `-> Enter passphrase (empty for no passphrase): `*[Type a passphrase]*
 
-*-> *`Enter same passphrase again: `*[Type passphrase again]*
+   `-> Enter same passphrase again: `*[Type passphrase again]*
 
 ### Adding your SSH key to the ssh-agent
 
@@ -72,23 +72,23 @@ Before adding a new SSH key to the ssh-agent to manage your keys, you should hav
 
 1. Start the ssh-agent in the background.
 
-`$ eval "$(ssh-agent -s)"`
+   `$ eval "$(ssh-agent -s)"`
 
-->` Agent pid 59566`
+   `-> Agent pid 59566`
 
 2. If you are using macOS Sierra 10.12.2 or later:  you will need to modify your `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
-`Host *`
+   `Host *`
 
-`AddKeysToAgent yes`
+   `AddKeysToAgent yes`
 
-`UseKeychain yes`
+   `UseKeychain yes`
 
-`IdentityFile ~/.ssh/id_rsa`
+   `IdentityFile ~/.ssh/id_rsa`
 
 3. Add your SSH private key to the ssh-agent and store your passphrase in the keychain. If you created your key with a different name, or if you are adding an existing key that has a different name, replace *id_rsa* in the command with the name of your private key file.
 
-`$ ssh-add -K ~/.ssh/id_rsa`
+   `$ ssh-add -K ~/.ssh/id_rsa`
 
 4. **Add the SSH key to your GitHub account**
 
@@ -105,31 +105,31 @@ After adding a new SSH key to your GitHub Enterprise account, you can reconfigur
 
 1. Copy the SSH key to your clipboard.
 
-If your SSH key file has a different name than the example code, modify the filename to match your current setup. When copying your key, don't add any newlines or whitespace.
+   If your SSH key file has a different name than the example code, modify the filename to match your current setup. When copying your key, don't add any newlines or whitespace.
 
-`a. ``Mac:`
+   a. Mac:
 
-`$ pbcopy < ~/.ssh/id_rsa.pub`
+      `$ pbcopy < ~/.ssh/id_rsa.pub`
 
-`# Copies the contents of the id_rsa.pub file to your clipboard`
+      `# Copies the contents of the id_rsa.pub file to your clipboard`
 
-b. Windows:
+   b. Windows:
 
-$ clip < ~/.ssh/id_rsa.pub
+      $ clip < ~/.ssh/id_rsa.pub
 
-#Copies the contents of the id_rsa.pub file to your clipboard
+      #Copies the contents of the id_rsa.pub file to your clipboard
 
-c. Linux:
+   c. Linux:
 
-$ sudo apt-get install xclip
+      $ sudo apt-get install xclip
 
-#Downloads and installs xclip. If you don't have `apt-get`, you might need to use another installer (like `yum`)
+      #Downloads and installs xclip. If you don't have `apt-get`, you might need to use another installer (like `yum`)
 
-$ xclip -sel clip < ~/.ssh/id_rsa.pub
+      $ xclip -sel clip < ~/.ssh/id_rsa.pub
 
-#Copies the contents of the id_rsa.pub file to your clipboard
+      #Copies the contents of the id_rsa.pub file to your clipboard
 
-**Tip:** If `pbcopy/clip/xclip` isn't working, you can locate the hidden `.ssh` folder, open the file in your favorite text editor, and copy it to your clipboard.
+      **Tip:** If `pbcopy/clip/xclip` isn't working, you can locate the hidden `.ssh` folder, open the file in your favorite text editor, and copy it to your clipboard.
 
 2. In the upper-right corner of any page, click your profile photo, then click **Settings**.
 
@@ -156,13 +156,13 @@ The `git remote set-url` command takes two arguments:
 
 - A new URL for the remote. For example:
 
-o If you're updating to use HTTPS, your URL might look like:
+If you're updating to use HTTPS, your URL might look like:
 
-`https://[hostname]/`*USERNAME*`/`*REPOSITORY*`.git`
+   `https://[hostname]/`*USERNAME*`/`*REPOSITORY*`.git`
 
-o If you're updating to use SSH, your URL might look like:
+If you're updating to use SSH, your URL might look like:
 
-`git@`*hostname*`:`*USERNAME*`/`*REPOSITORY*`.git`
+   `git@`*hostname*`:`*USERNAME*`/`*REPOSITORY*`.git`
 
 ### Switching remote URLs from SSH to HTTPS
 
@@ -172,31 +172,31 @@ o If you're updating to use SSH, your URL might look like:
 
 3. List your existing remotes in order to get the name of the remote you want to change.
 
-`$ git remote -v`
+   `$ git remote -v`
 
-`-> ``origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (fetch)`
+   `-> ``origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (fetch)`
 
--> `origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (push)`
+   `-> origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (push)`
 
 4. Change your remote's URL from SSH to HTTPS with the `git remote set-url` command.
 
-`$ git remote set-url origin https://`*hostname*`/`*USERNAME*`/`*REPOSITORY*`.git`
+   `$ git remote set-url origin https://`*hostname*`/`*USERNAME*`/`*REPOSITORY*`.git`
 
 5. Verify that the remote URL has changed.
 
-`$ git remote -v`
+   `$ git remote -v`
 
-`# Verify new remote URL`
+   `# Verify new remote URL`
 
-`-> ``origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (fetch)`
+   `-> origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (fetch)`
 
--> `origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (push)`
+   `-> origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (push)`
 
 The next time you `git fetch`, `git pull`, or `git push` to the remote repository, you'll be asked for your GitHub username and password.
 
-- If you have [two-factor authentication](https://help.github.com/en/enterprise/2.18/user/articles/securing-your-account-with-two-factor-authentication-2fa) enabled, you must **create a personal access token** to use instead of your GitHub password.
+   - If you have [two-factor authentication](https://help.github.com/en/enterprise/2.18/user/articles/securing-your-account-with-two-factor-authentication-2fa) enabled, you must **create a personal access token** to use instead of your GitHub password.
 
-- You can [use a credential helper](https://help.github.com/en/enterprise/2.18/user/articles/caching-your-github-password-in-git) so Git will remember your GitHub username and password every time it talks to GitHub.
+   - You can [use a credential helper](https://help.github.com/en/enterprise/2.18/user/articles/caching-your-github-password-in-git) so Git will remember your GitHub username and password every time it talks to GitHub.
 
 ### Switching remote URLs from HTTPS to SSH
 
@@ -206,25 +206,25 @@ The next time you `git fetch`, `git pull`, or `git push` to the remote repos
 
 3. List your existing remotes in order to get the name of the remote you want to change.
 
-`$ git remote -v`
+   `$ git remote -v`
 
-`-> ``origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (fetch)`
+   `-> origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (fetch)`
 
--> `origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (push)`
+   `-> origin  https://`*hostname*`/`*USERNAME/REPOSITORY*`.git (push)`
 
 4. Change your remote's URL from HTTPS to SSH with the `git remote set-url` command.
 
--> `$ git remote set-url origin git@`*hostname*`:`*USERNAME*`/`*REPOSITORY*`.git`
+   `-> $ git remote set-url origin git@`*hostname*`:`*USERNAME*`/`*REPOSITORY*`.git`
 
 5. Verify that the remote URL has changed.
 
-`$ git remote -v`
+   `$ git remote -v`
 
-`# Verify new remote URL`
+   `# Verify new remote URL`
 
-`-> ``origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (fetch)`
+   `-> origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (fetch)`
 
--> `origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (push)`
+   `-> origin  git@`*hostname*`:`*USERNAME/REPOSITORY*`.git (push)`
 
 ### Troubleshooting
 
@@ -234,9 +234,9 @@ You may encounter these errors when trying to change a remote.
 
 This error means that the remote you tried to change doesn't exist:
 
-`$ git remote set-url sofake `<https://hostname/octocat/Spoon-Knife>
+   `$ git remote set-url sofake `<https://hostname/octocat/Spoon-Knife>
 
--> `fatal: No such remote 'sofake'`
+   `-> fatal: No such remote 'sofake'`
 
 Check that you've correctly typed the remote name.
 
@@ -275,10 +275,10 @@ Once you have a token, you can enter it instead of your password when performing
 
 For example, on the command line you would enter the following:
 
-`$ git clone https://`*hostname*`/`*username*`/`*repo*`.git`
+   `$ git clone https://`*hostname*`/`*username*`/`*repo*`.git`
 
-`Username: your_username`
+   `Username: your_username`
 
-`Password: `*your_token*
+   `Password: your_token`
 
 Personal access tokens can only be used for HTTPS Git operations. If your repository uses an SSH remote URL, you will need to **switch the remote from SSH to HTTPS**.

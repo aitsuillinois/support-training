@@ -16,7 +16,9 @@ Git Essential Training: The Basics (2h 55m) - https://www.linkedin.com/learning/
 
 ## SSH Keys and Personal Access Tokens
 
-Creating SSH Keys (download): 
+Creating SSH Keys - https://github.com/aitsuillinois/support-training/blob/master/github-sshkeys-tokens.md
+
+[download file](https://github.com/aitsuillinois/support-training/raw/master/GitHub%20-%20SSH%20Keys.docx)
 
 ## Managing Access in Repositories
 

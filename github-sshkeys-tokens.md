@@ -65,7 +65,7 @@ If you don't want to reenter your passphrase every time you use your SSH key, yo
 
 #### Adding your SSH key to the ssh-agent
 
-Before adding a new SSH key to the ssh-agent to manage your keys, you should have **checked for existing SSH keys** and **generated a new SSH key** 
+Before adding a new SSH key to the ssh-agent to manage your keys, you should have [checked for existing keys](https://github.com/aitsuillinois/support-training/blob/master/github-sshkeys-tokens.md#check-for-existing-ssh-keys) and [generated a new SSH key](https://github.com/aitsuillinois/support-training/blob/master/github-sshkeys-tokens.md#generating-a-new-ssh-key).
 
 1. Start the ssh-agent in the background.
 
@@ -87,17 +87,17 @@ Before adding a new SSH key to the ssh-agent to manage your keys, you should hav
 
    `$ ssh-add -K ~/.ssh/id_rsa`
 
-4. **Add the SSH key to your GitHub account**
+4. [Add the SSH key to your GitHub account](https://github.com/aitsuillinois/support-training/blob/master/github-sshkeys-tokens.md#adding-a-new-ssh-key-to-your-github-account)
 
 ### Adding a new SSH key to your GitHub account
 
 Before adding a new SSH key to your GitHub Enterprise account, you should have:
 
-**Checked for existing SSH keys**
+[Checked for existing SSH keys](https://github.com/aitsuillinois/support-training/blob/master/github-sshkeys-tokens.md#check-for-existing-ssh-keys)
 
-**Generated a new SSH key and added it to the ssh-agent**
+[Generated a new SSH key and added it to the ssh-agent](https://github.com/aitsuillinois/support-training/blob/master/github-sshkeys-tokens.md#generate-a-new-ssh-key-and-add-it-to-the-ssh-agent)
 
-After adding a new SSH key to your GitHub Enterprise account, you can reconfigure any local repositories to use SSH. For more information, see **Switching remote URLs from HTTPS to SSH**
+After adding a new SSH key to your GitHub Enterprise account, you can reconfigure any local repositories to use SSH. For more information, see [Switching remote URLs from HTTPS to SSH](https://github.com/aitsuillinois/support-training/blob/master/github-sshkeys-tokens.md#switching-remote-urls-from-https-to-ssh)
 
 1. Copy the SSH key to your clipboard.
 
@@ -189,7 +189,7 @@ If you're updating to use SSH, your URL might look like:
 
 The next time you `git fetch`, `git pull`, or `git push` to the remote repository, you'll be asked for your GitHub username and password.
 
-   - If you have [two-factor authentication](https://help.github.com/en/enterprise/2.18/user/articles/securing-your-account-with-two-factor-authentication-2fa) enabled, you must **create a personal access token** to use instead of your GitHub password.
+   - If you have [two-factor authentication](https://help.github.com/en/enterprise/2.18/user/articles/securing-your-account-with-two-factor-authentication-2fa) enabled, you must [create a personal access token](https://github.com/aitsuillinois/support-training/blob/master/github-sshkeys-tokens.md#creating-a-token) to use instead of your GitHub password.
 
    - You can [use a credential helper](https://help.github.com/en/enterprise/2.18/user/articles/caching-your-github-password-in-git) so Git will remember your GitHub username and password every time it talks to GitHub.
 
@@ -273,4 +273,4 @@ For example, on the command line you would enter the following:
 
    `Password: your_token`
 
-Personal access tokens can only be used for HTTPS Git operations. If your repository uses an SSH remote URL, you will need to **switch the remote from SSH to HTTPS**.
+Personal access tokens can only be used for HTTPS Git operations. If your repository uses an SSH remote URL, you will need to [switch the remote from SSH to HTTPS](https://github.com/aitsuillinois/support-training/blob/master/github-sshkeys-tokens.md#switching-remote-urls-from-ssh-to-https).

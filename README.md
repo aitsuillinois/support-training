@@ -24,6 +24,12 @@ Personal Access Tokens - https://help.github.com/en/github/authenticating-to-git
 
 Managing Access: TBD
 
+## Submitting a Support Ticket
+
+How to Submit a Ticket: https://help.github.com/en/github/working-with-github-support/submitting-a-ticket#submitting-a-ticket-using-the-github-support-portal
+
+Support Portal (Submission Form) - https://support.github.com/contact
+
 ## Other helpful links:
 
 https://git-scm.com/

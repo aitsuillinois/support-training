@@ -2,11 +2,9 @@
 
 ## GitHub Provided Labs
 
-GitHub Learning Lab - https://lab.github.com/
+Introduction to GitHub - https://github.com/skills/introduction-to-github
 
-Introduction to GitHub - https://lab.github.com/githubtraining/introduction-to-github
-
-Using Markdown in GitHub - https://lab.github.com/githubtraining/communicating-using-markdown 
+Using Markdown in GitHub - https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/about-writing-and-formatting-on-github
 
 ## LinkedIn Learning Videos
 
